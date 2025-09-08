@@ -1,23 +1,24 @@
-NAME = megaphone
+NAME = Account
 
 COMP = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = megaphone.cpp
+SRC = Account.cpp tests.cpp
+HEADER = Account.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	$(COMP) $(FLAGS) $< -o $@
+	$(COMP) $(FLAGS) $^ -o $@
 
-%.o : %.cpp
+%.o : %.cpp $(HEADER)
 	$(COMP) $(FLAGS) -c $< -o $@
 
 clean :
-	rm -rf $(OBJ)
+	rm -f $(OBJ)
 
 fclean : clean
-	rm -rf $(NAME)
+	rm -f $(NAME)
 
-re : fclean all 
+re : fclean all 	

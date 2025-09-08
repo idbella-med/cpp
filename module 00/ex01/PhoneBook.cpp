@@ -1,6 +1,6 @@
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook() : count(0), index(0)
+PhoneBook::PhoneBook() : count(0), index(0) {}
 
 std::string Contact::truncate(std::string str) {
     if (str.length() > 10)
