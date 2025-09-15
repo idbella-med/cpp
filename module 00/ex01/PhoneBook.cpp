@@ -10,7 +10,7 @@ std::string Contact::truncate(std::string str) {
 }
 
 void Contact::displayShort(int index) {
-    std::cout << std::setw(10) << index << "|"
+    std::cout << std::setw(10) << index + 1 << "|"
                   << std::setw(10) << truncate(firstName) << "|"
                   << std::setw(10) << truncate(lastName) << "|"
                   << std::setw(10) << truncate(nickname) << "\n";
@@ -24,27 +24,45 @@ void Contact::displayFull() {
         std::cout << "Darkest Secret: " << darkestSecret << "\n";
 }
 
+int Contact::is_print(std::string str) {
+    for(int i = 0; str[i]; i++) {
+        if(!std::isprint(str[i])) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+int Contact::onlynumbers(std::string str) {
+    for (int i = 0; str[i]; i++) {
+        if (!std::isdigit(str[i]) && !(i == 0 && str[i] == '+')) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
 int Contact::setcontact()
 {
     std::cout << "first name : ";
     std::getline(std::cin, firstName);
-    if (firstName.empty())
+    if (firstName.empty() || !is_print(firstName))
         return 0;
     std::cout << "last name : ";
     std::getline(std::cin, lastName);
-    if (lastName.empty())
+    if (lastName.empty() || !is_print(lastName))
         return 0;
     std::cout << "nickname : ";
     std::getline(std::cin, nickname);
-    if (nickname.empty())
+    if (nickname.empty() || !is_print(nickname))
         return 0;
     std::cout << "phone number : ";
     std::getline(std::cin, phoneNumber);
-    if (phoneNumber.empty())
-        return 0;
+    if (phoneNumber.empty() || !onlynumbers(phoneNumber))
+        return -1;
     std::cout << "darkest secret : ";
     std::getline(std::cin, darkestSecret);
-    if (darkestSecret.empty())
+    if (darkestSecret.empty() || !is_print(darkestSecret))
         return 0;
     return 1;
 }
@@ -52,12 +70,18 @@ int Contact::setcontact()
 void PhoneBook::add()
 {
     Contact newcontact;
+    int result;
 
-    if (!newcontact.setcontact())
-    {
-        std::cout << "Error: A saved contact can\'t have empty fields." << std::endl;
-        return ;
+    result = newcontact.setcontact();
+    if (result == 0) {
+        std::cout << "Error: not valid input" << std::endl;
+        return;
     }
+    else if (result == -1) {
+        std::cout << "Error: phone number can only be numbers" << std::endl;
+        return;
+    }
+
     contact[index] = newcontact;
     index = (index + 1) % 8;
     if (count < 8)
@@ -88,11 +112,11 @@ void PhoneBook::search()
         std::cout << "GoodBye !" << std::endl;
         return;
     }
-    if (input.length() != 1 || input[0] < '0' || input[0] > '7') {
+    if (input.length() != 1 || input[0] < '1' || input[0] > '0' + count) {
         std::cout << "Invalid index.\n";
         return;
     }
-    int index = input[0] - '0';
+    int index = input[0] - '1';
     if (index >= count) {
         std::cout << "Index out of range.\n";
         return;
@@ -109,7 +133,8 @@ int main()
     {
         std::cout << "Enter command (ADD, SEARCH, EXIT): ";
         if (!std::getline(std::cin, prompt)) {
-            std::cout << "\nGoodBye !" << std::endl;
+            std::cout << std::endl;
+            std::cout << "GoodBye !" << std::endl;
             break;
         }
         if (prompt == "ADD")
@@ -117,6 +142,7 @@ int main()
         else if (prompt == "SEARCH")
             pb.search();
         else if (prompt == "EXIT") {
+            std::cout << std::endl;
             std::cout << "GoodBye !" << std::endl;
             break;
         }
