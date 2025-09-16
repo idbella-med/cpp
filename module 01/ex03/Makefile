@@ -1,8 +1,8 @@
-NAME=
+NAME= weapon
 COMP= c++
 FLAGS= -Wall -Wextra -Werror -std=c++98
-SRC=
-HEADER=
+SRC= main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+HEADER= HumanA.hpp HumanB.hpp Weapon.hpp
 OBJ= $(SRC:.cpp=.o)
 
 all: $(NAME)
