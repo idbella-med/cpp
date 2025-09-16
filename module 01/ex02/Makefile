@@ -1,7 +1,7 @@
-NAME=
+NAME= brain
 COMP= c++
 FLAGS= -Wall -Wextra -Werror -std=c++98
-SRC=
+SRC= main.cpp
 HEADER=
 OBJ= $(SRC:.cpp=.o)
 
