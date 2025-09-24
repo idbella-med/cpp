@@ -1,3 +1,5 @@
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 #include "Contact.hpp"
 
 class PhoneBook
@@ -6,9 +8,12 @@ class PhoneBook
         Contact contact[8];
         int count;
         int index;
-
+    
     public:
         PhoneBook();
-        void add();
-        void search();
+        ~PhoneBook();
+        int Add();
+        int Search();
+        void Exit();
 };
+#endif

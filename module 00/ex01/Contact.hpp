@@ -1,3 +1,5 @@
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -12,11 +14,13 @@ class Contact
         std::string darkestSecret;
 
     public:
-        int setcontact();
+        int Setcontact();
         int is_print(std::string str);
         int onlynumbers(std::string str);
+        int onlyspace(std::string str);
         void displayShort(int index);
         void displayFull();
         std::string truncate(std::string str);
 
 };
+#endif
