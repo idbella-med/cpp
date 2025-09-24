@@ -1,8 +1,8 @@
-NAME=
+NAME=Fixed
 COMP= c++
 FLAGS= -Wall -Wextra -Werror -std=c++98
-SRC=
-HEADER=
+SRC=Fixed.cpp main.cpp
+HEADER=Fixed.hpp
 OBJ= $(SRC:.cpp=.o)
 
 all: $(NAME)
