@@ -1,8 +1,8 @@
-NAME=
+NAME=Sed
 COMP= c++
 FLAGS= -Wall -Wextra -Werror -std=c++98
-SRC=
-HEADER=
+SRC=main.cpp Sed.cpp 
+HEADER=Sed.hpp
 OBJ= $(SRC:.cpp=.o)
 
 all: $(NAME)

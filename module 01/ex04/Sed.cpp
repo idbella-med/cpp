@@ -1,9 +1,9 @@
-#include "SedForLosers.hpp"
+#include "Sed.hpp"
 
-SedForLosers::SedForLosers(const std::string& filename, const std::string& s1, const std::string& s2)
+Sed::Sed(std::string filename, std::string s1, std::string s2)
         : filename(filename), s1(s1), s2(s2) {}
 
-bool SedForLosers::validate() const {
+bool Sed::validate() {
     if (filename.empty() || s1.empty()) {
         std::cerr << "Error: Filename and s1 must not be empty.\n";
         return false;
@@ -11,14 +11,14 @@ bool SedForLosers::validate() const {
     return true;
 }
 
-void SedForLosers::replace() const {
-    std::ifstream inputFile(filename);
+void Sed::replace() {
+    std::ifstream inputFile(filename.c_str());
     if (!inputFile) {
         std::cerr << "Error: Could not open input file " << filename << "\n";
         return;
     }
 
-    std::ofstream outputFile(filename + ".replace");
+    std::ofstream outputFile((filename + ".replace").c_str());
     if (!outputFile) {
         std::cerr << "Error: Could not create output file " << filename << ".replace\n";
         return;

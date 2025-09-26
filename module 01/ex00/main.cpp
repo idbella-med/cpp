@@ -3,10 +3,10 @@
 int main() {
     Zombie* newz;
 
-    newz = newZombie("test1");
+    newz = newZombie("Zombie1");
     newz->announce();
     delete newz;
 
-    randomChump("test2");
+    randomChump("Zombie2");
     return 0;
 }

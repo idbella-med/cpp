@@ -1,19 +1,23 @@
 #include "Harl.hpp" 
 
-void Harl::debug( void ) {
-    std::cout << "DEBUG : this is debug message" << std::endl;
+void Harl::debug() {
+    std::cout << "[ DEBUG ]" << std::endl;
+    std::cout << "That\'s Bad there is an Error here !!" << std::endl;
 }
 
-void Harl::info( void ) {
-    std::cout << "INFO : this is info message" << std::endl;
+void Harl::info() {
+    std::cout << "[ INFO ]" << std::endl;
+    std::cout << "No Info For Today come Back Tomorow !" << std::endl;
 }
 
-void Harl::warning( void ) {
-    std::cout << "WARNING : this is warning message" << std::endl;
+void Harl::warning() {
+    std::cout << "[ WARNING ]" << std::endl;
+    std::cout << "Call The Dev There is Some Error's Comming !" << std::endl;
 }
 
-void Harl::error( void ) {
-    std::cout << "ERROR : this is error message" << std::endl;
+void Harl::error() {
+    std::cout << "[ ERROR ]" << std::endl;
+    std::cout << "Just Forget It\'s Not Necessary !" << std::endl;
 }
 
 void Harl::complain( std::string level ) {
@@ -36,7 +40,7 @@ void Harl::complain( std::string level ) {
         }
         else if (i == 3)
         {
-            std::cout << "NOTHING : there is no comments like this" << std::endl;
+            std::cout << "NOTHING : you are not Harl who are you ?" << std::endl;
             break;
         }
     }

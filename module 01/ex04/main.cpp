@@ -1,4 +1,4 @@
-#include "SedForLosers.hpp"
+#include "Sed.hpp"
 
 int main(int ac, char **av)
 {
@@ -7,7 +7,7 @@ int main(int ac, char **av)
         return 1;
     }
 
-    SedForLosers sed(av[1], av[2], av[3]);
+    Sed sed(av[1], av[2], av[3]);
 
     if (!sed.validate())
         return 1;

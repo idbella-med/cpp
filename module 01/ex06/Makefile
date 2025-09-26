@@ -1,8 +1,8 @@
-NAME=
+NAME=harlFilter
 COMP= c++
 FLAGS= -Wall -Wextra -Werror -std=c++98
-SRC=
-HEADER=
+SRC=Harl.cpp main.cpp
+HEADER=Harl.hpp
 OBJ= $(SRC:.cpp=.o)
 
 all: $(NAME)
