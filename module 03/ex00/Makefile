@@ -1,8 +1,8 @@
-NAME=Fixed
+NAME=clap
 COMP= c++
 FLAGS= -Wall -Wextra -Werror -std=c++98
-SRC=Fixed.cpp main.cpp
-HEADER=Fixed.hpp
+SRC=ClapTrap.cpp main.cpp
+HEADER=ClapTrap.hpp
 OBJ= $(SRC:.cpp=.o)
 
 all: $(NAME)
