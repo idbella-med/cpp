@@ -1,8 +1,8 @@
-NAME=
+NAME=frag
 COMP= c++
 FLAGS= -Wall -Wextra -Werror -std=c++98
-SRC=
-HEADER=
+SRC=FragTrap.cpp main.cpp ClapTrap.cpp ScavTrap.cpp
+HEADER=FragTrap.hpp ScavTrap.hpp ClapTrap.hpp
 OBJ= $(SRC:.cpp=.o)
 
 all: $(NAME)

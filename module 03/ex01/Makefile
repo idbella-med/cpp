@@ -1,8 +1,8 @@
-NAME=
+NAME=clapv2
 COMP= c++
 FLAGS= -Wall -Wextra -Werror -std=c++98
-SRC=
-HEADER=
+SRC=main.cpp ClapTrap.cpp ScavTrap.cpp
+HEADER= ClapTrap.hpp ScavTrap.hpp
 OBJ= $(SRC:.cpp=.o)
 
 all: $(NAME)
