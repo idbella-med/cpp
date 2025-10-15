@@ -1,22 +1,24 @@
-NAME=clapv2
-COMP= c++
-FLAGS= -Wall -Wextra -Werror -std=c++98
-SRC=main.cpp ClapTrap.cpp ScavTrap.cpp
-HEADER= ClapTrap.hpp ScavTrap.hpp
-OBJ= $(SRC:.cpp=.o)
+NAME = ScavTrap
 
-all: $(NAME)
+COMP = c++
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
-$(NAME): $(OBJ)
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
+HEADER = ClapTrap.hpp ScavTrap.hpp
+OBJ = $(SRC:.cpp=.o)
+
+all : $(NAME)
+
+$(NAME) : $(OBJ)
 	$(COMP) $(FLAGS) $^ -o $@
 
-%.o: %.cpp $(HEADER)
+%.o : %.cpp $(HEADER)
 	$(COMP) $(FLAGS) -c $< -o $@
 
-clean:
+clean :
 	rm -f $(OBJ)
 
-fclean: clean
+fclean : clean
 	rm -f $(NAME)
 
-re: fclean all
+re : fclean all

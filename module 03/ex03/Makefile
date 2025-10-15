@@ -1,10 +1,10 @@
-NAME = FragTrap
+NAME = DiamondTrap
 
 COMP = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow
 
-SRC = FragTrap.cpp main.cpp ClapTrap.cpp ScavTrap.cpp
-HEADER = FragTrap.hpp ScavTrap.hpp ClapTrap.hpp
+SRC = FragTrap.cpp main.cpp ClapTrap.cpp ScavTrap.cpp DiamondTrap.cpp
+HEADER = FragTrap.hpp ScavTrap.hpp ClapTrap.hpp DiamondTrap.hpp
 OBJ = $(SRC:.cpp=.o)
 
 all : $(NAME)

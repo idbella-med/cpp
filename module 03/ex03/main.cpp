@@ -1,5 +1,4 @@
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main() {
     ClapTrap c1("BasicBot");
@@ -23,6 +22,16 @@ int main() {
     f1.beRepaired(10);
     f1.highFivesGuys();
     
+    std::cout << "--------------------------\n";
+    
+    DiamondTrap d1("test2");
+    d1.attack("some one");
+    d1.takeDamage(30);
+    d1.beRepaired(10);
+    d1.guardGate();
+    d1.highFivesGuys();
+    d1.whoAmI();
+
     std::cout << "--------------------------\n";
 
     return 0;

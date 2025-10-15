@@ -1,8 +1,9 @@
 #include "ClapTrap.hpp"
 
 int main() {
-    ClapTrap CP("SOMETHING");
-    CP.beRepaired(2);
-    CP.takeDamage(10);
-    CP.attack("PPPP");
+    ClapTrap cp("Hero");
+    cp.attack("enemy");
+    cp.takeDamage(2);
+    cp.beRepaired(10);
+    std::cout << "--------------------------\n";
 }
