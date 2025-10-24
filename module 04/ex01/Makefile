@@ -1,8 +1,11 @@
-NAME=
-COMP= c++
-FLAGS= -Wall -Wextra -Werror -std=c++98
-SRC=
-HEADER=
+NAME = brain
+
+COMP = c++
+FLAGS = -Wall -Wextra -Werror -std=c++98
+
+SRC = Animal.cpp Cat.cpp Dog.cpp main.cpp WrongAnimal.cpp WrongCat.cpp
+HEADER = Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp
+
 OBJ= $(SRC:.cpp=.o)
 
 all: $(NAME)

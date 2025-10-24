@@ -5,7 +5,7 @@ Animal::Animal() : type("Animal") {
 }
 
 void Animal::makeSound() const {
-    std::cout << "Nothing" << std::endl;
+    std::cout << "Animal Sound!" << std::endl;
 }
 
 std::string Animal::getType() const {
@@ -13,13 +13,13 @@ std::string Animal::getType() const {
 }
 
 Animal::Animal(const Animal& animal) {
-    *this = animal;
     std::cout << "Animal copy constructor called" << std::endl;
+    *this = animal; // check it
 }
 
 Animal& Animal::operator=(const Animal& other) {
-    type = other.type;
     std::cout << "Animal copy assignment constructor called" << std::endl;
+    type = other.type;
     return *this;
 }
 

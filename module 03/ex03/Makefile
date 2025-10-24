@@ -1,7 +1,7 @@
 NAME = DiamondTrap
 
 COMP = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = FragTrap.cpp main.cpp ClapTrap.cpp ScavTrap.cpp DiamondTrap.cpp
 HEADER = FragTrap.hpp ScavTrap.hpp ClapTrap.hpp DiamondTrap.hpp

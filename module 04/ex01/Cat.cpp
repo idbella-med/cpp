@@ -1,8 +1,9 @@
 #include "Cat.hpp"
 
 Cat::Cat() {
-    type = "Cat";
     std::cout << "Cat Default constructor called" << std::endl;
+    type = "Cat";
+    brain = new Brain();
 }
 
 void Cat::makeSound() const {
@@ -10,12 +11,14 @@ void Cat::makeSound() const {
 }
 
 Cat::Cat(const Cat& cat) {
-    *this = cat;
+    *this = cat; // check it
     std::cout << "Cat copy constructor called" << std::endl;
 }
 
 Cat& Cat::operator=(const Cat& other) {
     Animal::operator=(other);
+    delete brain;
+    brain = new Brain(*other.brain); // check why other.brain not work
     std::cout << "Cat copy assignment constructor called" << std::endl;
     return *this;
 }

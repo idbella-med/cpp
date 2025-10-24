@@ -24,7 +24,7 @@ void ScavTrap::attack(const std::string& target) {
         return ;
     }
     if (HitPoints == 0) {
-        std::cout << NAME << "already died" << std::endl;
+        std::cout << NAME << " already died" << std::endl;
         return ;
     }
     EnergyPoints--;
